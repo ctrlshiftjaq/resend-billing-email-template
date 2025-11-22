@@ -23,7 +23,7 @@ export async function POST(request) {
 	try {
 		//Hardcoded HTML body
 		const subject = body.subject || "Oops! Payment didn't go through";
-		const html = `<html><body style="font-family:Arial, sans-serif;color:#3498eb"><div style="max-width:600px;margin:0 auto;padding:20px"><h1>Payment failed</h1><p>Hi ${customerName},</p><p>We tried to charge you ${amount} but the payment failed: ${failureReason}.</p><p>You can download your invoice: ${body.attachmentFilename || 'Billing failure example.pdf'}</p><hr/><p style="font-size:12px;color:#666">Acme Billing Team</p>${footer}</div></body></html>`;
+		const html = `<html><body style="font-family:Arial, sans-serif;color:#3498eb"><div style="max-width:600px;margin:0 auto;padding:20px"><h1>Payment failed</h1><p>Hi ${customerName},</p><p>We tried to charge you ${amount} but the payment failed: ${failureReason}.</p><p>You can download your invoice: ${body.attachmentFilename || 'Billing failure example.pdf'}</p><p>Please update your payment information to continue enjoying our services.</p><hr/><p style="font-size:12px;color:#666">Acme Billing Team</p>${footer}</div></body></html>`;
 
 		const { data } = await resend.emails.send({
 			from: "Acme Billing Team <onboarding@resend.dev>",
