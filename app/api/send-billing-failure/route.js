@@ -25,7 +25,7 @@ export async function POST(request) {
             <h1>Payment failed</h1>
             <p>Hi ${customerName},</p>
             <p>We tried to charge you ${amount} but the payment failed: ${failureReason}.</p>
-            <p>The invoice for the failed payment is attached.}</p>
+            <p>The invoice for the failed payment is attached.</p>
             <p>Please update your payment information to continue enjoying our services.</p>
             <hr/>
             <p style="font-size:12px;color:#666">Acme Billing Team</p>
@@ -42,7 +42,7 @@ export async function POST(request) {
       html,
       attachments: [
         {
-          path: "https://raw.githubusercontent.com/ctrlshiftjaq/resend-billing-email-template/1fa37fa43fa91ca7305289931cb28e98f6a7e8c1/emails/Billingfailure.pdf",
+          path: "https://raw.githubusercontent.com/ctrlshiftjaq/resend-billing-email-template/main/emails/Billingfailure.pdf",
           filename: body.attachmentFilename || "Billingfailure.pdf",
         },
       ],
