@@ -1,5 +1,4 @@
 import { Resend } from 'resend';
 
-const apiKey = process.env.RESEND_API_KEY || '';
-
-export const resend = new Resend(apiKey);
+// Initialize Resend with your API key from .env.local
+export const resend = new Resend(process.env.RESEND_API_KEY);
